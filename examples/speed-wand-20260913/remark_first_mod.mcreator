@@ -1,0 +1,53 @@
+{
+  "mod_elements": [
+    {
+      "name": "SpeedWand",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "speed_wand",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/remark_first_mod/item/SpeedWandItem.java",
+          "src/main/resources/assets/remark_first_mod/models/item/speed_wand.json"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "item.remark_first_mod.speed_wand": "คทาเร่งความเร็ว"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/remark_first_mod/init/RemarkFirstModModItems.java",
+      "src/main/java/net/mcreator/remark_first_mod/RemarkFirstModMod.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/resources/META-INF/neoforge.mods.toml"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "remark_first_mod",
+    "modName": "Remark First Mod",
+    "version": "1.0.0",
+    "description": "No-code speed wand example",
+    "author": "Remark Studio",
+    "license": "All Rights Reserved",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.1-21.1.219"
+  },
+  "mcreatorVersion": 202600299999
+}

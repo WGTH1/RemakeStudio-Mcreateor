@@ -1,0 +1,21 @@
+{
+  "name": "Remake Gold",
+  "description": "A dark gold and pink theme for Remake Studio.",
+  "colorScheme": {
+    "backgroundColor": "0x151014",
+    "altBackgroundColor": "0x2a1b22",
+    "secondAltBackgroundColor": "0x0f0c0d",
+    "foregroundColor": "0xfff0cf",
+    "altForegroundColor": "0xc9ad72",
+    "interfaceAccentColor": "0xe52a80"
+  },
+  "flatLafOverrides": {
+    "Button.default.background": "#e52a80",
+    "Button.default.foreground": "#fff7df",
+    "Component.focusColor": "#e52a80",
+    "MenuItem.selectionBackground": "#e52a80",
+    "MenuItem.selectionForeground": "#fff7df",
+    "ProgressBar.foreground": "#d6aa4a",
+    "TabbedPane.selectedBackground": "#2a1b22"
+  }
+}

@@ -1,0 +1,11 @@
+templates:
+  - template: createui/createui.java.ftl
+    name: "@SRCROOT/@BASEPACKAGEPATH/client/gui/@NAMECreateUIScreen.java"
+
+localizationkeys:
+  - fromlist: data.getFixedTextLabels()
+    key: gui.@modid.@registryname.@[getName()]
+    mapto: getRenderText()
+  - fromlist: data.getComponentsOfType('Button')
+    key: gui.@modid.@registryname.@[getName()]
+    mapto: text

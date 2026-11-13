@@ -1,0 +1,32 @@
+def proofRoot = new File(buildscript.sourceFile.parentFile, 'java')
+sourceSets {
+    aaaCommandProof {
+        java.srcDir proofRoot
+        resources.srcDir layout.buildDirectory.dir('generated/aaa-command-proof')
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+legacyForge.addModdingDependenciesTo(sourceSets.aaaCommandProof)
+legacyForge.mods.mcreator.sourceSet(sourceSets.aaaCommandProof)
+def writeStructure = tasks.register('writeAAACommandProofStructure', JavaExec) {
+    dependsOn tasks.named('compileAaaCommandProofJava')
+    javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(17) }
+    classpath = files(layout.buildDirectory.dir('classes/java/aaaCommandProof')) + sourceSets.main.runtimeClasspath
+    mainClass = 'proof.WriteAAAEmptyStructure'
+    args layout.buildDirectory.file('generated/aaa-command-proof/data/sundayzy/structures/empty.nbt').get().asFile.absolutePath
+}
+tasks.named('processAaaCommandProofResources') { dependsOn writeStructure }
+legacyForge.runs {
+    aaaCommandGameTest {
+        type = 'gameTestServer'
+        sourceSet = sourceSets.aaaCommandProof
+        gameDirectory = file('build/aaa-command-game-test')
+        systemProperty 'forge.enabledGameTestNamespaces', 'sundayzy'
+    }
+}
+tasks.register('installAAACommandProofMods', Copy) {
+    from('run/mods') { include '*aaa*.jar' }
+    into 'build/aaa-command-game-test/mods'
+}
+tasks.named('runAaaCommandGameTest') { dependsOn 'installAAACommandProofMods' }

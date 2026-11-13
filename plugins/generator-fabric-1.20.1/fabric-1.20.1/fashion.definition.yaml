@@ -1,0 +1,146 @@
+global_templates:
+  - template: display/live_preview.java.ftl
+    name: "@SRCROOT/@BASEPACKAGEPATH/client/preview/DisplayLivePreview.java"
+  - template: display/repository_mixin.java.ftl
+    name: "@SRCROOT/@BASEPACKAGEPATH/mixins/DisplayPreviewRepositoryMixin.java"
+
+templates:
+  - template: armor.java.ftl
+    name: "@SRCROOT/@BASEPACKAGEPATH/item/@NAMEItem.java"
+  - template: fashion_item_worn_layer.java.ftl
+    condition: simpleItemWearable
+    name: "@SRCROOT/@BASEPACKAGEPATH/client/renderer/item/@NAMEFashionLayer.java"
+
+  # Helmet item model
+  - template: json/item.json.ftl
+    writer: json
+    variables: "item=helmet"
+    condition:
+      - "shouldGenerateHelmetItem()"
+      - "hasHelmetNormalModel()"
+    name: "@MODASSETSROOT/models/item/@registryname_helmet.json"
+  - template: json/tool.json.ftl
+    writer: json
+    variables: "item=helmet"
+    condition:
+      - "shouldGenerateHelmetItem()"
+      - "hasHelmetToolModel()"
+    name: "@MODASSETSROOT/models/item/@registryname_helmet.json"
+  - template: json/item_cmodel.json.ftl
+    writer: json
+    variables: "item=helmet"
+    condition:
+      - "shouldGenerateHelmetItem()"
+      - "helmetItemRenderType #= 1"
+    name: "@MODASSETSROOT/models/item/@registryname_helmet.json"
+  - template: json/item_cmodel_obj.json.ftl
+    writer: json
+    variables: "item=helmet"
+    condition:
+      - "shouldGenerateHelmetItem()"
+      - "helmetItemRenderType #= 2"
+    name: "@MODASSETSROOT/models/item/@registryname_helmet.json"
+
+  # Body item model
+  - template: json/item.json.ftl
+    writer: json
+    variables: "item=body"
+    condition:
+      - "shouldGenerateBodyItem()"
+      - "hasBodyNormalModel()"
+    name: "@MODASSETSROOT/models/item/@registryname_chestplate.json"
+  - template: json/tool.json.ftl
+    writer: json
+    variables: "item=body"
+    condition:
+      - "shouldGenerateBodyItem()"
+      - "hasBodyToolModel()"
+    name: "@MODASSETSROOT/models/item/@registryname_chestplate.json"
+  - template: json/item_cmodel.json.ftl
+    writer: json
+    variables: "item=body"
+    condition:
+      - "shouldGenerateBodyItem()"
+      - "bodyItemRenderType #= 1"
+    name: "@MODASSETSROOT/models/item/@registryname_chestplate.json"
+  - template: json/item_cmodel_obj.json.ftl
+    writer: json
+    variables: "item=body"
+    condition:
+      - "shouldGenerateBodyItem()"
+      - "bodyItemRenderType #= 2"
+    name: "@MODASSETSROOT/models/item/@registryname_chestplate.json"
+
+  # Leggings item model
+  - template: json/item.json.ftl
+    writer: json
+    variables: "item=leggings"
+    condition:
+      - "shouldGenerateLeggingsItem()"
+      - "hasLeggingsNormalModel()"
+    name: "@MODASSETSROOT/models/item/@registryname_leggings.json"
+  - template: json/tool.json.ftl
+    writer: json
+    variables: "item=leggings"
+    condition:
+      - "shouldGenerateLeggingsItem()"
+      - "hasLeggingsToolModel()"
+    name: "@MODASSETSROOT/models/item/@registryname_leggings.json"
+  - template: json/item_cmodel.json.ftl
+    writer: json
+    variables: "item=leggings"
+    condition:
+      - "shouldGenerateLeggingsItem()"
+      - "leggingsItemRenderType #= 1"
+    name: "@MODASSETSROOT/models/item/@registryname_leggings.json"
+  - template: json/item_cmodel_obj.json.ftl
+    writer: json
+    variables: "item=leggings"
+    condition:
+      - "shouldGenerateLeggingsItem()"
+      - "leggingsItemRenderType #= 2"
+    name: "@MODASSETSROOT/models/item/@registryname_leggings.json"
+
+  # Boots item model
+  - template: json/item.json.ftl
+    writer: json
+    variables: "item=boots"
+    condition:
+      - "shouldGenerateBootsItem()"
+      - "hasBootsNormalModel()"
+    name: "@MODASSETSROOT/models/item/@registryname_boots.json"
+  - template: json/tool.json.ftl
+    writer: json
+    variables: "item=boots"
+    condition:
+      - "shouldGenerateBootsItem()"
+      - "hasBootsToolModel()"
+    name: "@MODASSETSROOT/models/item/@registryname_boots.json"
+  - template: json/item_cmodel.json.ftl
+    writer: json
+    variables: "item=boots"
+    condition:
+      - "shouldGenerateBootsItem()"
+      - "bootsItemRenderType #= 1"
+    name: "@MODASSETSROOT/models/item/@registryname_boots.json"
+  - template: json/item_cmodel_obj.json.ftl
+    writer: json
+    variables: "item=boots"
+    condition:
+      - "shouldGenerateBootsItem()"
+      - "bootsItemRenderType #= 2"
+    name: "@MODASSETSROOT/models/item/@registryname_boots.json"
+
+localizationkeys:
+  - key: item.@modid.@registryname_helmet
+    mapto: helmetName
+    condition: shouldGenerateHelmetItem()
+  - key: item.@modid.@registryname_chestplate
+    mapto: bodyName
+    condition: shouldGenerateBodyItem()
+  - key: item.@modid.@registryname_leggings
+    mapto: leggingsName
+    condition: shouldGenerateLeggingsItem()
+  - key: item.@modid.@registryname_boots
+    mapto: bootsName
+    condition: shouldGenerateBootsItem()

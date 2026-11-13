@@ -1,0 +1,11 @@
+_default: none
+none: none
+eat: eat
+drink: drink
+block: block
+bow: bow
+trident: trident
+crossbow: crossbow
+spyglass: spyglass
+toot_horn: toot_horn
+brush: brush

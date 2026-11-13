@@ -1,0 +1,12 @@
+name: AAA Particles
+
+neoforge-1.21.1-21.1.219:
+  required_when_enabled: true
+  gradle: |
+    repositories {
+      maven { url = "https://api.modrinth.com/maven" }
+    }
+
+    dependencies {
+      implementation "maven.modrinth:aaa-particles:neoforge-1.21.1-2.1.0"
+    }

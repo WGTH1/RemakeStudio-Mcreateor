@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "remark_first_mod:item/speed_wand"
+  }
+}

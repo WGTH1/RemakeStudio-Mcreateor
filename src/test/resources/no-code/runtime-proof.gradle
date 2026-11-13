@@ -1,0 +1,33 @@
+// Only applied to the generated example with -PremarkRuntimeProof.
+def proofRoot = file('../../src/test/resources/no-code')
+sourceSets {
+    runtimeProof {
+        java.srcDir new File(proofRoot, 'java')
+        resources.srcDir layout.buildDirectory.dir('generated/runtime-proof')
+        resources.srcDir file('../../build/no-code-proof/item-test-resources')
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+configurations.runtimeProofImplementation.extendsFrom(configurations.implementation)
+configurations.runtimeProofRuntimeOnly.extendsFrom(configurations.runtimeOnly)
+neoForge.addModdingDependenciesTo(sourceSets.runtimeProof)
+neoForge.mods.mcreator.sourceSet(sourceSets.runtimeProof)
+
+def writeStructure = tasks.register('writeProofStructure', JavaExec) {
+    dependsOn tasks.named('compileRuntimeProofJava')
+    javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(21) }
+    classpath = files(layout.buildDirectory.dir('classes/java/runtimeProof')) +
+            sourceSets.main.output + configurations.runtimeProofRuntimeClasspath
+    mainClass = 'proof.WriteEmptyStructure'
+    args layout.buildDirectory.file('generated/runtime-proof/data/remark_first_mod/structure/empty.nbt').get().asFile.absolutePath
+}
+tasks.named('processRuntimeProofResources') { dependsOn writeStructure }
+neoForge.runs {
+    noCodeGameTest {
+        type = 'gameTestServer'
+        sourceSet = sourceSets.runtimeProof
+        gameDirectory = file('run-proof')
+        systemProperty 'neoforge.enabledGameTestNamespaces', 'remark_first_mod'
+    }
+}

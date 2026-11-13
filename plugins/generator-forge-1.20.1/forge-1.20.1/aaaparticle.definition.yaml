@@ -1,0 +1,13 @@
+templates:
+  - template: aaaparticle.java.ftl
+    name: "@SRCROOT/@BASEPACKAGEPATH/aaaparticle/@NAMEAAAParticle.java"
+  - template: aaaparticle_particle.java.ftl
+    name: "@SRCROOT/@BASEPACKAGEPATH/client/particle/@NAMEAAAParticleProvider.java"
+
+global_templates:
+  - template: aaaparticle_commands.java.ftl
+    name: "@SRCROOT/@BASEPACKAGEPATH/aaaparticle/@JavaModNameAAAParticleCommands.java"
+  - template: elementinits/particles.java.ftl
+    name: "@SRCROOT/@BASEPACKAGEPATH/init/@JavaModNameParticles.java"
+  - template: elementinits/particletypes.java.ftl
+    name: "@SRCROOT/@BASEPACKAGEPATH/init/@JavaModNameParticleTypes.java"

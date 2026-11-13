@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+    <dict>
+
+        <key>CFBundleDevelopmentRegion</key>
+        <string>en</string>
+
+        <key>CFBundleName</key>
+        <string>Remake Studio</string>
+        <key>CFBundleIdentifier</key>
+        <string>studio.remark</string>
+
+        <key>CFBundleExecutable</key>
+        <string>remark-studio</string>
+        <key>CFBundleIconFile</key>
+        <string>remark-studio-app.icns</string>
+        <key>LSMinimumSystemVersion</key>
+        <string>11</string>
+        <key>LSRequiresNativeExecution</key>
+        <true/>
+
+        <key>CFBundleInfoDictionaryVersion</key>
+        <string>6.0</string>
+        <key>CFBundlePackageType</key>
+        <string>APPL</string>
+        <key>CFBundleShortVersionString</key>
+        <string>%version%</string>
+        <key>CFBundleSignature</key>
+        <string>studio.remark.app</string>
+        <key>CFBundleVersion</key>
+        <string>%version%.%build%</string>
+        <key>LSApplicationCategoryType</key>
+        <string>public.app-category.developer-tools</string>
+
+        <key>CFBundleDocumentTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleTypeExtensions</key>
+                <array>
+                    <string>mcreator</string>
+                </array>
+                <key>CFBundleTypeIconFile</key>
+                <string>remark-studio.icns</string>
+                <key>CFBundleTypeName</key>
+                <string>Remake Studio workspace file</string>
+                <key>CFBundleTypeRole</key>
+                <string>Editor</string>
+                <key>LSHandlerRank</key>
+                <string>Owner</string>
+            </dict>
+        </array>
+
+    </dict>
+
+</plist>

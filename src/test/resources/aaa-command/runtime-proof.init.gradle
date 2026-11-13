@@ -1,0 +1,7 @@
+allprojects {
+    afterEvaluate {
+        if (plugins.hasPlugin('net.neoforged.moddev.legacyforge')) {
+            apply from: new File(initscript.sourceFile.parentFile, 'runtime-proof.gradle')
+        }
+    }
+}

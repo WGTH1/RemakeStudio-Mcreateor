@@ -1,0 +1,13 @@
+Remake Studio - Windows portable package
+
+1. Extract this ZIP to a normal folder. Avoid OneDrive or a path with very long names when possible.
+2. Open the extracted folder.
+3. Double-click RUN_REMAKE_STUDIO.bat.
+4. Save and close other Studio windows before applying pending updates. If no temporary drive is free, close the application that owns an unused mapping and try again. Existing drive mappings are not removed by this launcher.
+
+This package includes the bundled Windows JDK and the Remake Studio generators/plugins. It is intended for Windows 10/11 x64.
+The first launch may take longer while Gradle prepares its local dependencies. Internet access may be required for dependencies that are not already cached.
+
+Do not remove the jdk, lib, platform, plugins, gradle, or src folders. The launcher needs them.
+
+Included targets and extensions depend on the plugin folders shipped in this package. Restart the program after changing plugins.

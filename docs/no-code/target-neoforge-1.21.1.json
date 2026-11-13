@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "neoforge-1.21.1-21.1.219",
+  "minecraftVersion": "1.21.1",
+  "loader": "NeoForge",
+  "loaderVersion": "21.1.219",
+  "mappings": "Mojang official 1.21.1 (NeoForm)",
+  "buildJava": 21,
+  "runJava": 21,
+  "applicationJava": 25,
+  "gradleVersion": "9.6.1",
+  "buildPlugin": "net.neoforged.moddev",
+  "buildPluginVersion": "2.0.141",
+  "generatorVersion": "Remake Studio 2026.2 / simple behavior schema 1",
+  "dependencies": ["net.neoforged:neoforge:21.1.219"],
+  "extraRuntimeMods": [],
+  "simpleBehaviorStatus": "experimental",
+  "simpleBehaviorFeatures": ["item-right-click", "self-speed-effect", "vanilla-cooldown", "bounded-particle-burst"],
+  "explicitlyUnsupportedCombinations": ["food", "ranged", "charged-use", "item-inventory", "right-click-procedure"],
+  "cooldownSemantics": {
+    "scope": "per player and item type, including both hands and all stacks",
+    "dimensionChange": "uses the vanilla player's cooldown manager",
+    "reconnectOrRespawn": "not persisted by this feature; follows vanilla player lifecycle"
+  },
+  "effects": {"durationSeconds": [1, 600], "levels": [1, 5], "cooldownSeconds": [1, 3600], "burstParticles": [0, 8]}
+}

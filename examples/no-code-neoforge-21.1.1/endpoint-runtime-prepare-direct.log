@@ -1,0 +1,34 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.6.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: build runtimeProofClasses prepareNoCodeGameTest
+> Task :createMinecraftArtifacts UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :jarJar NO-SOURCE
+> Task :jar UP-TO-DATE
+> Task :assemble UP-TO-DATE
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :check UP-TO-DATE
+> Task :build UP-TO-DATE
+
+> Task :compileRuntimeProofJava
+R:\src\test\resources\no-code\java\proof\ItemGrantGameTest.java:14: warning: [removal] makeMockServerPlayerInLevel() in GameTestHelper has been deprecated and marked for removal
+        var player = helper.makeMockServerPlayerInLevel();
+                           ^
+1 warning
+
+> Task :processRuntimeProofResources
+> Task :runtimeProofClasses
+> Task :downloadAssets UP-TO-DATE
+> Task :writeNoCodeGameTestLegacyClasspath UP-TO-DATE
+> Task :prepareNoCodeGameTestRun UP-TO-DATE
+
+[Incubating] Problems report is available at: file:///R:/examples/no-code-neoforge-21.1.1/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 11s
+9 actionable tasks: 2 executed, 7 up-to-date
+Configuration cache entry stored.

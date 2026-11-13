@@ -1,0 +1,67 @@
+name: AAA Particles
+
+neoforge-26.1.2:
+  required_when_enabled: true
+  gradle: |
+    repositories {
+      maven { url = "https://api.modrinth.com/maven" }
+      maven { url = "https://maven.architectury.dev/" }
+    }
+
+    dependencies {
+      implementation "maven.modrinth:aaa-particles:neoforge-26.1.2-2.2.2"
+      compileOnly("dev.architectury:architectury-neoforge:20.0.6") { transitive = false }
+    }
+
+neoforge-1.21.1:
+  required_when_enabled: true
+  gradle: |
+    repositories {
+      maven { url = "https://api.modrinth.com/maven" }
+      maven { url = "https://maven.architectury.dev/" }
+    }
+
+    dependencies {
+      implementation "maven.modrinth:aaa-particles:neoforge-1.21.1-2.1.0"
+      compileOnly("dev.architectury:architectury-neoforge:13.0.8") { transitive = false }
+    }
+
+forge-1.20.1:
+  required_when_enabled: true
+  version_range: "[2.1.0,)"
+  gradle: |
+    repositories {
+      maven { url = "https://api.modrinth.com/maven" }
+      maven { url = "https://maven.architectury.dev/" }
+    }
+
+    dependencies {
+      modImplementation "maven.modrinth:En8uHTOK:svild8SE"
+      modCompileOnly("dev.architectury:architectury-forge:9.2.14") { transitive = false }
+    }
+
+fabric-26.1.2:
+  required_when_enabled: true
+  gradle: |
+    repositories {
+      maven { url = "https://api.modrinth.com/maven" }
+      maven { url = "https://maven.architectury.dev/" }
+    }
+
+    dependencies {
+      implementation "maven.modrinth:aaa-particles:fabric-26.1-2.0.1"
+      compileOnly("dev.architectury:architectury-fabric:20.0.6") { transitive = false }
+    }
+
+fabric-1.20.1:
+  required_when_enabled: true
+  gradle: |
+    repositories {
+      maven { url = "https://api.modrinth.com/maven" }
+      maven { url = "https://maven.architectury.dev/" }
+    }
+
+    dependencies {
+      modImplementation "maven.modrinth:En8uHTOK:KPUjU5NL"
+      modCompileOnly("dev.architectury:architectury-fabric:9.2.14") { transitive = false }
+    }
